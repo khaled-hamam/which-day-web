@@ -25,7 +25,12 @@ class App extends Component {
         <main className="App-main">
           <p className="day-number-header">Day Number</p>
           <p className="day-number">{chosenDate ? chosenDate.dayOfYear() : '🤔'}</p>
-          <DatePicker value={chosenDate} onChange={this.onChange} format="DD/MM/YYYY" />
+          <DatePicker
+            value={chosenDate}
+            onChange={this.onChange}
+            format="DD/MM/YYYY"
+            aria-label="Choose a date"
+          />
         </main>
         <footer className="App-footer">
           <p>Coded with ❤️ by Khaled Mohamed</p>
