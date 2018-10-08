@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import DatePicker from 'antd/lib/date-picker';
+import moment from 'moment';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chosenDate: moment()
+    };
+  }
+
+  onChange = (date, dateString) => {
+    this.setState({ chosenDate: date });
+  };
+
   render() {
+    const { chosenDate } = this.state;
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Which Day</h1>
         </header>
+        <main className="App-main">
+          <p className="day-number-header">Day Number</p>
+          <p className="day-number">{chosenDate ? chosenDate.dayOfYear() : '🤔'}</p>
+          <DatePicker value={chosenDate} onChange={this.onChange} format="DD/MM/YYYY" />
+        </main>
+        <footer className="App-footer">
+          <p>Coded with ❤️ by Khaled Mohamed</p>
+        </footer>
       </div>
     );
   }
