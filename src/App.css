@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+@import './antd.css';
 
 .App {
   text-align: center;
@@ -29,14 +29,13 @@
 
 .day-number-header {
   font-size: 24pt;
-  font-weight: 900;
-  margin-bottom: 0px;
+  font-weight: 700;
 }
 
 .day-number {
   color: #1dd1a1;
   font-size: 120pt;
-  font-weight: 900;
-  margin-top: -50px;
+  font-weight: 700;
+  margin-top: -30px;
   margin-bottom: 0px;
 }
